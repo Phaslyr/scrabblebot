@@ -9,12 +9,12 @@ The goal is to move the **same bot** to a more stable connection and measure whe
 ## Current bot and status
 
 - Registered identity: **TaylorMason**. Use its existing credential; do not create a replacement identity just to move hosts.
-- Strategy: **`taylor-offense-v4`**, selected configuration **`public-six`**, maximum extra acquisition preference six coins.
+- Strategy: **`taylor-median-v5`**, frozen selected median-buying candidate (`valueScale: 1.2`, `bidScale: 1`). Existing v4 word timing is preserved. Local score improvements are promising; online win superiority is not established.
 - Defense is disabled. Preserve that setting.
-- Entry point: `bot-starter/src/online.ts`; active policy wrapper: `bot-starter/src/taylor.ts`.
-- Active configuration: `bot-starter/src/taylor-settings.ts`; rules and public preferences: `taylor-policy.ts` and `taylor-priors.ts`.
+- Entry point: `bot-starter/src/online.ts`; active policy wrapper: `bot-starter/src/taylor-live.ts`.
+- Active configuration/model: `bot-starter/src/taylor-median-settings.ts`; shared buying policy: `median-policy.ts`. The old `taylor.ts` and settings remain the frozen v4 baseline and fallback.
 - The owner's runner was stopped and its recurring monitoring was deleted. Confirm it has not subsequently restarted before starting this copy.
-- Last complete offline suite: **91 passing tests**, plus a passing TypeScript build. Verify on this computer rather than assuming portability.
+- Last complete offline suite: **94 passing tests**, plus a passing TypeScript build. Verify on this computer rather than assuming portability.
 - The source machine used **Node.js v26.2.0**. This is the tested version, not a claim about the latest or minimum supported version. Check compatibility before choosing a different runtime.
 
 ## 1. Obtain the correct project
@@ -215,3 +215,7 @@ Provide a short setup report containing:
 - Exact start/stop instructions for this machine and unresolved issues.
 
 Keep the bot stopped if you only received this handoff for preparation. Preserve the current strategy so the hosting comparison remains meaningful.
+
+## Current setup note
+
+The normal launchers select v5. No new games or tournament entries were started during setup. Do not use the historical `start-taylor-continuous.ps1` or old campaign status scripts to launch v5; they describe the stopped v4 campaign. The credential is deliberately excluded from the source bundle and must be transferred privately.

@@ -1,3 +1,5 @@
+> Current TaylorMason default: **taylor-median-v5**, frozen median buying candidate with v4 word timing and defense disabled. See FRIEND-HOST-HANDOFF.md for setup. Older policy/results below are historical.
+
 # Your Cal Hacks ScrabbleBot
 
 The bot is in `bot-starter/`. The original game and spectator app are included in this checkout, but you only need to run the bot.

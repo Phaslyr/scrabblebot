@@ -6,6 +6,7 @@ import { prepareDictionary } from "./strategy.js";
 import { observeRacks, type DefensiveDecision, type PublicRackEvent } from "./defense.js";
 import {decideTaylorBid,chooseTaylorWord,TAYLOR_POLICY_VERSION,TAYLOR_ACTIVE_CONFIG} from './taylor.js';
 import {TAYLOR_PRIOR_METADATA} from './taylor-priors.js';
+import {createLiveTaylorPolicy,recoverTaylorKnowledge,TAYLOR_LIVE_VERSION,TAYLOR_LIVE_CONFIG} from './taylor-live.js';
 import { Study, PROFILES, type Profile, type MatchResult } from "./study.js";
 import { decideWagsDecision, chooseWagsWord, prepareWagsDictionary, assertWagsIdentity, WAGS_SETTINGS } from "./wags.js";
 import { VictorMateoPolicy, VICTOR_POLICY_VERSION, VICTOR_SETTINGS, assertVictorIdentity, type VictorMode } from "./victor.js";
@@ -51,7 +52,7 @@ process.on("exit", () => {
 const dictionary = loadDictionary();
 prepareDictionary(dictionary);
 if (isWags) prepareWagsDictionary(dictionary);
-const study = new Study(training, limit, join("runs",name), { botName:name,strategy,fixedProfile:evaluation?.profile });
+const study = new Study(training, limit, join("runs",name), { botName:name,strategy,fixedProfile:evaluation?.profile,policyVersion:isVictor?VICTOR_POLICY_VERSION:isWags?SCORING_POLICY_VERSION:TAYLOR_LIVE_VERSION });
 if (training && study.results.filter((result) => result.phase !== "partial").length >= limit) {
   study.write();
   console.log(`This practice session is already complete. Report: ${resolve(study.dir, "REPORT.md")}`);
@@ -59,8 +60,8 @@ if (training && study.results.filter((result) => result.phase !== "partial").len
 }
 const normal: Profile = evaluation?.profile??(isVictor?"victor":isWags ? "wags" : "taylor");
 study.log("session", { host, database, name, strategy, training, adapterVersion:ONLINE_ADAPTER_VERSION,evaluation:!!evaluation, limit: training||evaluation ? limit : null,minutes:evaluation?.minutes,
-  policyVersion:isVictor?VICTOR_POLICY_VERSION:isWags?SCORING_POLICY_VERSION:TAYLOR_POLICY_VERSION,profiles: isVictor||isWags?PROFILES:{taylor:0},plan:null,
-  configuration:isVictor||isWags?undefined:TAYLOR_ACTIVE_CONFIG,wordPriorSnapshot:isVictor||isWags?undefined:TAYLOR_PRIOR_METADATA.collectedAt });
+  policyVersion:isVictor?VICTOR_POLICY_VERSION:isWags?SCORING_POLICY_VERSION:TAYLOR_LIVE_VERSION,profiles: isVictor||isWags?PROFILES:{taylor:0},plan:null,
+  configuration:isVictor||isWags?undefined:TAYLOR_LIVE_CONFIG,wordPriorSnapshot:isVictor||isWags?undefined:TAYLOR_PRIOR_METADATA.collectedAt });
 console.log(`[${name}] ${isVictor?"Build scoring income, defend a funded position, rebuild when needed":isWags ? "Aggressive acquisition, planned payouts, contender pressure" : training ? `Fixed offense-only practice: ${limit} full matches` : 'Productive acquisition and premium-word scoring; defense disabled'}`);
 console.log(`Reports: ${resolve(study.dir)}`);
 if(evaluation)study.write();
@@ -82,6 +83,7 @@ interface State {
   rackRevision: number;
   lastSuccessfulRevision: number;
   victor?:VictorMateoPolicy;
+  taylor?:ReturnType<typeof createLiveTaylorPolicy>;
   subscription?: SubscriptionHandle;
 }
 
@@ -171,9 +173,19 @@ function bid(auctionId: bigint) {
   const start = performance.now();
   const ctx = { ...contextFor(auction.matchId),letter:auction.letter };
   const opponents=opponentsFor(auction.matchId);
+  let taylorDecision:DefensiveDecision|undefined;
+  if(state.taylor){
+    const match=connection.db.matchState.id.find(state.id)!;
+    const purchases=[...connection.db.auctionResult.iter()].filter(a=>a.matchId===state.id&&a.auctionId<auctionId);
+    const knowledge=recoverTaylorKnowledge({rack:ctx.myRack,ownId:botId,startingRackSize:match.startingRackSize,participants:opponents.length+1,
+      purchases:purchases.map(a=>({letter:a.letter,winnerBotId:a.winnerBotId,at:a.closedAt.microsSinceUnixEpoch})),
+      words:[...connection.db.wordPlay.iter()].filter(w=>w.matchId===state.id).map(w=>({word:w.word,botId:w.botId,at:w.playedAt.microsSinceUnixEpoch}))});
+    if(knowledge){state.taylor.restore(knowledge);const amount=state.taylor.bid({...ctx,publicKnownRack:new Map(),opponents});taylorDecision={amount,baseline:amount,threat:0,weight:0,...state.taylor.lastDecision};}
+    else {taylorDecision=decideTaylorBid(ctx);study.log('median-history-fallback',{matchId:state.id,auctionId,reason:'Own initial rack did not reconcile; using v4 for this auction'});}
+  }
   const previous=state.victor?.snapshot.mode;
   const decision: DefensiveDecision = state.victor?state.victor.bid({...ctx,opponents}):isWags ? decideWagsDecision({...ctx,opponents})
-    : decideTaylorBid(ctx);
+    : taylorDecision??decideTaylorBid(ctx);
   logVictorMode(state,previous);
   const elapsedMs = performance.now() - start;
   state.decisions.set(String(auctionId), decision);
@@ -197,7 +209,7 @@ function play(state: State) {
   const previous=state.victor?.snapshot.mode;
   const ctx=contextFor(state.id);
   const word = state.victor?state.victor.word({...ctx,opponents:opponentsFor(state.id)})
-    :(isWags ? chooseWagsWord : chooseTaylorWord)(ctx);
+    :state.taylor?state.taylor.word({...ctx,publicKnownRack:new Map(),opponents:opponentsFor(state.id)}):(isWags ? chooseWagsWord : chooseTaylorWord)(ctx);
   logVictorMode(state,previous);
   if (!word) return;
   const revision = state.rackRevision;
@@ -242,7 +254,7 @@ function attachMatches() {
     const assignment = study.assign(key, match.currentRound > 1, normal);
     const state: State = { id, ...assignment, ready: false, ending: false, pendingWord: false, retryWordAt: 0,
       decisions: new Map(), handledResults: new Set(), defensiveBids: 0, defensiveWins: 0, defensiveSpend: 0, totalSpend: 0,
-      rackRevision:0,lastSuccessfulRevision:-1, ...(isVictor?{victor:new VictorMateoPolicy()}:{}) };
+      rackRevision:0,lastSuccessfulRevision:-1, ...(isVictor?{victor:new VictorMateoPolicy()}:isWags?{}:{taylor:createLiveTaylorPolicy()}) };
     states.set(key, state);
     state.subscription = connection.subscriptionBuilder().onError((ctx) => stop(`Match subscription failed: ${ctx.event}`, 1))
       .onApplied(() => {

@@ -1,3 +1,5 @@
+> Current TaylorMason default: **taylor-median-v5**, frozen median buying candidate with v4 word timing and defense disabled. See FRIEND-HOST-HANDOFF.md for setup. Older policy/results below are historical.
+
 # Current bot strategies
 
 TaylorMason now uses **taylor-offense-v4**: no leader targeting, denial or defensive premiums. It retains whole-rack scoring and word timing, with bounded public-word acquisition preferences. The normal launcher and practice/evaluation modes all use this policy. See [TAYLOR-OFFENSE-RESULTS.md](TAYLOR-OFFENSE-RESULTS.md) for the 1,600-game local comparison, settings and limits.

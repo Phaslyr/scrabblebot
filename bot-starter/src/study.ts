@@ -52,13 +52,13 @@ export class Study {
   private fixedProfile?:Profile;
   private policyVersion:string;
 
-  constructor(training: boolean, maxMatches: number, root = "training", context:{botName:string;strategy:BotStrategy;fixedProfile?:Profile} = { botName: "TaylorMason", strategy: "defensive" }) {
+  constructor(training: boolean, maxMatches: number, root = "training", context:{botName:string;strategy:BotStrategy;fixedProfile?:Profile;policyVersion?:string} = { botName: "TaylorMason", strategy: "defensive" }) {
     if(training&&context.strategy!=="defensive"&&context.strategy!=="taylor") throw new Error("Bounded practice is only for TaylorMason.");
     this.training = training;
     this.maxMatches = maxMatches;
     this.botName = context.botName;
     this.strategy = context.strategy;
-    this.policyVersion=context.strategy==='taylor'?TAYLOR_POLICY_VERSION:context.strategy==='victor'?VICTOR_POLICY_VERSION:SCORING_POLICY_VERSION;
+    this.policyVersion=context.policyVersion??(context.strategy==='taylor'?TAYLOR_POLICY_VERSION:context.strategy==='victor'?VICTOR_POLICY_VERSION:SCORING_POLICY_VERSION);
     this.fixedProfile=context.fixedProfile;
     if(this.fixedProfile!==undefined&&(training||!(context.strategy==='defensive'&&['baseline','cautious','assertive','pressure'].includes(this.fixedProfile)||context.strategy==='taylor'&&this.fixedProfile==='taylor')))throw new Error('Fixed evaluation requires the matching policy without training.');
     this.schedule = context.strategy==='taylor'?['taylor']:training && process.env.BOT_TRAIN_PLAN

@@ -1,4 +1,4 @@
-// Experimental only: no live runner or active policy imports this module.
+// Shared median buying policy; the live wrapper uses a frozen selected configuration.
 import {taylorOffenseBid,chooseOffensiveTaylorWord} from './taylor-policy.js';
 import {TAYLOR_ACTIVE_CONFIG} from './taylor-settings.js';
 import {rawValueFrontier,availability,TILE_COUNTS,priceFor,removeWord,rackText,type ValueMarket,type ValueKnowledge} from './value-planning.js';
@@ -60,7 +60,8 @@ export function makeMedianAgent(config:MedianConfig,model:MedianModel,trace?:(e:
   let k:ValueKnowledge,initialized=false;
   const diagnostics={marketRaises:0,premiumRaises:0,forecastCycles:0,forecastMismatches:0,wordHolds:0,goalWords:0};
   let expectedFirst:string|null|undefined,firstWordPending=false;
-  const agent:ArenaAgent&{lastDecision?:Record<string,any>;diagnostics:typeof diagnostics}={name:'Candidate',kind:'taylor',diagnostics,
+  const agent:ArenaAgent&{lastDecision?:Record<string,any>;diagnostics:typeof diagnostics;restore:(knowledge:ValueKnowledge)=>void}={name:'Candidate',kind:'taylor',diagnostics,
+    restore(knowledge){k={...knowledge,initialRack:new Map(knowledge.initialRack),seen:new Map(knowledge.seen)};initialized=true;firstWordPending=false;},
     reset(){k={initialRack:new Map(),seen:new Map(),hiddenInitial:25,lastWordRound:0,round:0};initialized=false;agent.lastDecision=undefined;firstWordPending=false;for(const key of Object.keys(diagnostics))diagnostics[key as keyof typeof diagnostics]=0;},
     bid(ctx){if(!initialized){k.initialRack=new Map(ctx.myRack);initialized=true;}k.round++;k.seen.set(ctx.letter,(k.seen.get(ctx.letter)??0)+1);
       const old=taylorOffenseBid(ctx,TAYLOR_ACTIVE_CONFIG);

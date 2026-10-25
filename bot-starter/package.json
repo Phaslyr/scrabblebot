@@ -11,7 +11,7 @@
     "victor:check": "tsx src/victor-check.ts",
     "wags:check": "tsx src/wags-check.ts",
     "train": "tsx src/online.ts --train",
-    "test": "node --import tsx --test --test-concurrency=1 src/strategy.test.ts src/dictionary.test.ts src/defense.test.ts src/study.test.ts src/online-evaluation.test.ts src/online-progress.test.ts src/public-opponents.test.ts src/wags.test.ts src/local-arena.test.ts src/planning.test.ts src/competition.test.ts src/victor.test.ts src/scoring-v3.test.ts src/taylor-policy.test.ts src/taylor.test.ts",
+    "test": "node --import tsx --test --test-concurrency=1 src/strategy.test.ts src/dictionary.test.ts src/defense.test.ts src/study.test.ts src/online-evaluation.test.ts src/online-progress.test.ts src/public-opponents.test.ts src/wags.test.ts src/local-arena.test.ts src/planning.test.ts src/competition.test.ts src/victor.test.ts src/scoring-v3.test.ts src/taylor-policy.test.ts src/taylor.test.ts src/taylor-live.test.ts",
     "build": "tsc",
     "check": "npm run test && npm run build",
     "smoke": "tsx src/smoke.ts",

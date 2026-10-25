@@ -7,7 +7,7 @@ import { loadDictionary } from "../src/dictionary.ts";
 import { prepareDictionary,wordReward } from "../src/strategy.ts";
 import { prepareWagsDictionary } from "../src/wags.ts";
 import {SCORING_POLICY_VERSION} from "../src/scoring-v3.ts";
-import {TAYLOR_POLICY_VERSION,TAYLOR_ACTIVE_CONFIG} from '../src/taylor.ts';
+import {TAYLOR_LIVE_VERSION as TAYLOR_POLICY_VERSION,TAYLOR_LIVE_CONFIG as TAYLOR_ACTIVE_CONFIG,makeLiveTaylorAgent} from '../src/taylor-live.ts';
 import { makeWagsAgent,makeTaylorAgent,makeModelAgent,simulateMatch } from "../src/local-arena.ts";
 
 const args = process.argv.slice(2);
@@ -35,7 +35,7 @@ const models = summary.selected.filter((model)=>model.tier==="priority").slice(0
   .map((model)=>JSON.parse(readFileSync(`opponents/models/bot-${model.botId}.json`,"utf8")));
 if (models.length!==5) throw new Error("Five priority public-data models are required; build them first.");
 const defenseWeight=0;
-const wags = makeWagsAgent(), taylor = makeTaylorAgent();
+const wags = makeWagsAgent(), taylor = makeLiveTaylorAgent();
 const opponents = models.map(makeModelAgent);
 const records = [];
 const expectedGames = 4*seeds+2*Math.ceil(seeds/2);
@@ -112,7 +112,7 @@ for (const game of duels) {
   const w = game.players.find((p)=>p.kind==="wags"),t = game.players.find((p)=>p.kind==="taylor");
   if (w.score===t.score) duelCounts.ties++; else if(w.score>t.score) duelCounts.wags++; else duelCounts.taylor++;
 }
-const sourceFiles = ["scripts/run-local-tests.mjs","src/taylor.ts","src/taylor-policy.ts","src/taylor-settings.ts","src/taylor-priors.ts","src/strategy.ts","src/planning.ts","src/competition.ts","src/scoring-v3.ts","src/leader-priors-v3.ts","src/intel.ts","src/wags.ts","src/defense.ts","src/local-arena.ts",...models.map((m)=>`opponents/models/bot-${m.botId}.json`),"../spacetimedb/wordlist.txt","../spacetimedb/src/letters.ts"];
+const sourceFiles = ["scripts/run-local-tests.mjs","src/taylor-live.ts","src/taylor-median-settings.ts","src/median-policy.ts","src/value-planning.ts","src/taylor.ts","src/taylor-policy.ts","src/taylor-settings.ts","src/taylor-priors.ts","src/strategy.ts","src/planning.ts","src/competition.ts","src/scoring-v3.ts","src/leader-priors-v3.ts","src/intel.ts","src/wags.ts","src/defense.ts","src/local-arena.ts",...models.map((m)=>`opponents/models/bot-${m.botId}.json`),"../spacetimedb/wordlist.txt","../spacetimedb/src/letters.ts"];
 const result = {startedAt,completedAt:new Date().toISOString(),elapsedSeconds:(performance.now()-start)/1000,gameCount:records.length,
   randomGenerator:"mulberry32",seedOffset,independentSeedCounts:{mixed:seeds,replacement:seeds,duel:Math.ceil(seeds/2)},defenseWeight,policyVersions:{wags:SCORING_POLICY_VERSION,taylor:TAYLOR_POLICY_VERSION},taylorConfiguration:TAYLOR_ACTIVE_CONFIG,auctionType:"Vickrey",startingBalance:100,startingRackSize:5,
   models:models.map((m)=>({name:m.name,botId:m.botId,snapshot:m.collectedAt,fidelity:m.evidence.fidelity})),

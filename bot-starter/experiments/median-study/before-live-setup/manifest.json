@@ -1,0 +1,27 @@
+[
+  {
+    "file": "src/median-policy.ts",
+    "snapshot": "experiments\\median-study\\before-live-setup\\src\\median-policy.ts",
+    "sha256": "8d6ee91e8bccca73d5387b94551e3af5d5e60fd417dfd213ee11c3517b338499"
+  },
+  {
+    "file": "src/online.ts",
+    "snapshot": "experiments\\median-study\\before-live-setup\\src\\online.ts",
+    "sha256": "6dc1e66fc3f79bb899071aefd50cf19eb39fa2e96918fdacb2f7ea75a04b0e1b"
+  },
+  {
+    "file": "src/study.ts",
+    "snapshot": "experiments\\median-study\\before-live-setup\\src\\study.ts",
+    "sha256": "f5fb1800c1f2f3f96c32c9fa04fb9233661601b6d879cb399c50a79314850a11"
+  },
+  {
+    "file": "src/smoke.ts",
+    "snapshot": "experiments\\median-study\\before-live-setup\\src\\smoke.ts",
+    "sha256": "526f515067823b6677cb504c3f840d915fd3b3c39b93507430a53231b6516a14"
+  },
+  {
+    "file": "scripts/run-local-tests.mjs",
+    "snapshot": "experiments\\median-study\\before-live-setup\\scripts\\run-local-tests.mjs",
+    "sha256": "b6b02b1e1ca737cad671d041a8f9a47302213a6aadea93b98f93871501c48ffe"
+  }
+]
