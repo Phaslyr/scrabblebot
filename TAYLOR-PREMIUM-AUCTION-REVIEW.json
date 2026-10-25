@@ -1,0 +1,76 @@
+{
+  "overall": {
+    "decisions": 119,
+    "meanBid": 11.857142857142858,
+    "medianBid": 9,
+    "medianPaid": 30,
+    "lateEstimates": 12,
+    "won": 0,
+    "lostDespiteBidAbovePaid": 1,
+    "meanGain": 6.361344537815126,
+    "meanPotential": 8.263764705882352,
+    "raised": 61
+  },
+  "completeLogSlice": {
+    "decisions": 76,
+    "meanBid": 10.118421052631579,
+    "medianBid": 7,
+    "medianPaid": 30,
+    "lateEstimates": 0,
+    "won": 0,
+    "lostDespiteBidAbovePaid": 0,
+    "meanGain": 4.9868421052631575,
+    "meanPotential": 6.852342105263158,
+    "raised": 32
+  },
+  "byLetter": {
+    "J": {
+      "decisions": 30,
+      "meanBid": 11.8,
+      "medianBid": 13,
+      "medianPaid": 29,
+      "lateEstimates": 3,
+      "won": 0,
+      "lostDespiteBidAbovePaid": 0,
+      "meanGain": 7.233333333333333,
+      "meanPotential": 8.865666666666666,
+      "raised": 19
+    },
+    "Q": {
+      "decisions": 29,
+      "meanBid": 9.517241379310345,
+      "medianBid": 7,
+      "medianPaid": 28,
+      "lateEstimates": 2,
+      "won": 0,
+      "lostDespiteBidAbovePaid": 1,
+      "meanGain": 3.0689655172413794,
+      "meanPotential": 4.671172413793102,
+      "raised": 8
+    },
+    "X": {
+      "decisions": 30,
+      "meanBid": 13.633333333333333,
+      "medianBid": 14,
+      "medianPaid": 30,
+      "lateEstimates": 4,
+      "won": 0,
+      "lostDespiteBidAbovePaid": 0,
+      "meanGain": 7.9,
+      "meanPotential": 10.059199999999999,
+      "raised": 20
+    },
+    "Z": {
+      "decisions": 30,
+      "meanBid": 12.4,
+      "medianBid": 7,
+      "medianPaid": 37,
+      "lateEstimates": 3,
+      "won": 0,
+      "lostDespiteBidAbovePaid": 0,
+      "meanGain": 7.133333333333334,
+      "meanPotential": 9.339266666666669,
+      "raised": 14
+    }
+  }
+}

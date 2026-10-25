@@ -1,0 +1,13 @@
+# TaylorMason offense remodel
+
+The user requested removal of TaylorMason's defensive bidding and preferences for commonly successful high-payout words and letters. No online matches are authorized. Keep Wags, VictorMateo, old reports and raw data unchanged.
+
+Collect anonymous public SELECT records only. Fit word preferences from the latest 1,000 completed games, excluding the eight known live diagnostic matches. Select the eight highest current-version win-rate bots with at least 50 recorded games and 20 covered current-version matches. Require at least three distinct matches and two bots for a preferred word; validate spelling and payout against our dictionary/rules. Estimate letter preference relative to bag frequency, with shrinkage; rare-letter enrichment is not an instruction to buy rare tiles blindly. Retain the entire dictionary and current whole-rack packing.
+
+Compare five policies: original TaylorMason v3 with pressure 1.6; original v3 without pressure; offense-only with a bounded extra-spending allowance; and two bounded public-word acquisition preferences (maximum three or six extra coins). Preserve current word timing, the productive acquisition floor, cash limits and final-tile behavior. New policies must be independent of rival names, scores and racks.
+
+Development: 32 new bags per field and all five policies. Select an offense-only policy by mean own score across equally weighted fields, tie-breaking by score minus the highest rival, then simpler policy. Defense removal is the user's design preference, so the defensive original is a comparison only. Freeze selection before validation; do not retune on validation.
+
+Final validation: 128 different bags per field and all five policies, with identical seats, bags, model draws and tie randomness between variants. Fields: five public-data models; and unchanged v3 TaylorMason plus Wags plus three independent premium-goal planning rivals. These rivals remain approximate models, not original public bot code. Total 1,600 local games (320 development + 1,280 validation).
+
+Use fresh seeds beginning at 37,000,000 for development and 38,000,000 for validation, with a 10,000 field offset. Save all games, representative decision traces, paired uncertainty, word payouts, cash and purchasing metrics. Verify legal words, affordable bids, no defensive increments, no rival dependence, original control parity, and deadline performance. Do not claim simulated wins predict live win rates. Apply the selected offense-only settings to TaylorMason after completing the comparison; deployment and online play remain stopped.

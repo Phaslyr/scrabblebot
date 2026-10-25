@@ -1,0 +1,15 @@
+# VictorMateo refinement, offline only
+
+Keep all live policy, account, launcher, dictionary and prior experiment files unchanged. This study builds experimental candidates only and enters no public matches.
+
+Refresh anonymous public records for the latest 1,000 completed games. Audit balances, scores and rack counts. Select the six highest current public win rates with at least 50 current-version games and 20 current-version appearances in this archive. Use public bid intervals (all losing bounds retained) and modal word length with heuristic cash-out timing. Initial letters and losing bids are not recovered. Include postturing and Ambees if they meet the declared eligibility rule; never force an entrant that lacks data.
+
+Two six-player fields: VictorMateo + actual current TaylorMason + actual current Wags + three rotating public-data opponents; and VictorMateo + five rotating public-data opponents. Rotate all seats, keep letter bags, opponent draws and tie randomness matched between policy variants. Public opponents are approximate models, not the live originals. Count tied first place as a win and report head-to-head scores separately.
+
+Iteration 1: 40 new bags per field and five policies: original Victor, completion-hold fix only, newer scoring engine with original phase thresholds, newer engine with attainable funded phase thresholds, and a fixed TaylorMason scoring control. Select among the three refinements by mean own score averaged equally across the two fields, with rival-score reduction as tie-breaker.
+
+Iteration 2: 40 different bags per field; compare the selected parent, two nearby variants and the fixed TaylorMason control. If the parent is the old-engine hold fix, vary its minimum completion gain (6/12 versus 8). For a newer-engine parent, try a lean phase (entry cash 45, exit cash 18, reserve 6) and patient phase (entry cash 75, exit cash 30, reserve 16), versus the parent. Keep all other settings fixed. Select among parent and children using the same development-only criterion. No large parameter sweep.
+
+Freeze the selected candidate and source/model hashes before final testing. Final validation uses 160 fresh bags per field and four policies: original Victor, frozen candidate, static TaylorMason, static Wags. No further tuning based on these outcomes. Sensitivity uses 32 other bags per field and two policies (original/candidate) in each of: low hidden-bid assumption, high hidden-bid assumption, and newer-scoring planning opponents instead of empirical word/bid models. The expected total is 2,384 local games (400 + 320 + 1,280 + 384).
+
+Report paired score, shared-first, highest-rival-score and named TaylorMason/Wags comparisons. Use bags as the uncertainty unit, and keep fields/sensitivities separate. Report phase occupancy and transitions, scoring mix, cash and spend. Improvement against original Victor establishes a candidate upgrade; a useful hybrid also needs advantage versus the static modern controls. Do not describe proxy win rates as live-server forecasts. Document single-auction timing limitations and make no automatic live adoption.

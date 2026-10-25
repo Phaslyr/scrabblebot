@@ -1,0 +1,1715 @@
+{
+  "generatedAt": "2026-10-25T04:25:59.760Z",
+  "overall": {
+    "games": 50,
+    "wins": 1,
+    "score": 55.94,
+    "rank": 4.74,
+    "winner": 103.2,
+    "spent": 127.38,
+    "cash": 28.56,
+    "longPerGame": 1.52,
+    "longReward": 30.86842105263158,
+    "longScoreShare": 0.8387558097962102,
+    "zeroScores": 1
+  },
+  "excludedPartialGames": 11,
+  "completeOpeningLogSlice": {
+    "games": 27,
+    "wins": 1,
+    "score": 60.629629629629626,
+    "rank": 4.62962962962963,
+    "winner": 99.74074074074075,
+    "spent": 145.1851851851852,
+    "cash": 15.444444444444445,
+    "longPerGame": 1.7777777777777777,
+    "longReward": 29.3125,
+    "longScoreShare": 0.8594990836896762,
+    "zeroScores": 0
+  },
+  "completeOpeningLogIds": [
+    "14408",
+    "14633",
+    "14644",
+    "14654",
+    "14679",
+    "14690",
+    "14701",
+    "14712",
+    "14723",
+    "14733",
+    "14743",
+    "14753",
+    "14764",
+    "14775",
+    "14786",
+    "14797",
+    "14807",
+    "14818",
+    "14829",
+    "14840",
+    "14850",
+    "14861",
+    "14872",
+    "14915",
+    "14926",
+    "14968",
+    "14979"
+  ],
+  "winnerWordAudits": 50,
+  "winnerLongPerGame": 1.74,
+  "winnerLongReward": 48.10344827586207,
+  "winnerLongScoreShare": 0.811046511627907,
+  "ownPurchasesPerGame": 11.74,
+  "winnerPurchasesPerGame": 13.96,
+  "ownPremiumPurchases": 0,
+  "winnerPremiumPurchases": 33,
+  "acquisitionRaises": 359,
+  "wordGoalRaises": 23,
+  "observedPreferredFamiliesPlayed": [],
+  "decisions": 2986,
+  "lateLocalEstimates": 208,
+  "errors": {
+    "bid: Auction closed": 321,
+    "word ALIT: Match not running": 1,
+    "word OUTDID: Match not running": 1,
+    "word OE: Match not running": 1,
+    "word TIE: Match not running": 1
+  },
+  "defensiveBids": 0,
+  "allRealOpponents": true,
+  "perGame": [
+    {
+      "id": "14408",
+      "score": 61,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 16,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Metheny",
+      "winnerScore": 121,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "ANTIQUE",
+          "reward": 48
+        },
+        {
+          "word": "ABJURED",
+          "reward": 51
+        },
+        {
+          "word": "MORGAN",
+          "reward": 22
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14437",
+      "score": 44,
+      "rank": 5,
+      "decisions": 50,
+      "late": 5,
+      "errors": 11,
+      "extras": 9,
+      "wordGoalBids": 0,
+      "ownPurchases": 11,
+      "winnerPurchases": 13,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Bron",
+      "winnerScore": 96,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "HOVELED",
+          "reward": 42
+        },
+        {
+          "word": "INFIXED",
+          "reward": 54
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14447",
+      "score": 33,
+      "rank": 6,
+      "decisions": 41,
+      "late": 14,
+      "errors": 10,
+      "extras": 9,
+      "wordGoalBids": 1,
+      "ownPurchases": 7,
+      "winnerPurchases": 14,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "polarbear",
+      "winnerScore": 96,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "NEBULIZER",
+          "reward": 60
+        },
+        {
+          "word": "TYCOONS",
+          "reward": 36
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14484",
+      "score": 0,
+      "rank": 6,
+      "decisions": 21,
+      "late": 9,
+      "errors": 10,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 2,
+      "winnerPurchases": 19,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Nijello",
+      "winnerScore": 130,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JOYANCE",
+          "reward": 57
+        },
+        {
+          "word": "FIGGED",
+          "reward": 30
+        },
+        {
+          "word": "PREVAIL",
+          "reward": 36
+        },
+        {
+          "word": "HI",
+          "reward": 5
+        },
+        {
+          "word": "NO",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14494",
+      "score": 55,
+      "rank": 4,
+      "decisions": 61,
+      "late": 5,
+      "errors": 7,
+      "extras": 6,
+      "wordGoalBids": 1,
+      "ownPurchases": 13,
+      "winnerPurchases": 17,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Nijello",
+      "winnerScore": 132,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "HEROIZE",
+          "reward": 57
+        },
+        {
+          "word": "MUSPIKE",
+          "reward": 45
+        },
+        {
+          "word": "CAWING",
+          "reward": 30
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14504",
+      "score": 59,
+      "rank": 6,
+      "decisions": 34,
+      "late": 6,
+      "errors": 5,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 9,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Nijello",
+      "winnerScore": 133,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "DIALYZE",
+          "reward": 60
+        },
+        {
+          "word": "RETAXED",
+          "reward": 45
+        },
+        {
+          "word": "WHEWS",
+          "reward": 28
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14527",
+      "score": 45,
+      "rank": 4,
+      "decisions": 53,
+      "late": 5,
+      "errors": 5,
+      "extras": 9,
+      "wordGoalBids": 0,
+      "ownPurchases": 9,
+      "winnerPurchases": 16,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Calebot",
+      "winnerScore": 133,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JOYANCE",
+          "reward": 57
+        },
+        {
+          "word": "REWAXED",
+          "reward": 54
+        },
+        {
+          "word": "GADOID",
+          "reward": 22
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14586",
+      "score": 27,
+      "rank": 6,
+      "decisions": 26,
+      "late": 14,
+      "errors": 15,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 3,
+      "winnerPurchases": 17,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 2,
+      "winner": "guesser",
+      "winnerScore": 127,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUEENLY",
+          "reward": 57
+        },
+        {
+          "word": "TIGHTWAD",
+          "reward": 48
+        },
+        {
+          "word": "FETORS",
+          "reward": 22
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14597",
+      "score": 37,
+      "rank": 5,
+      "decisions": 45,
+      "late": 14,
+      "errors": 13,
+      "extras": 4,
+      "wordGoalBids": 1,
+      "ownPurchases": 9,
+      "winnerPurchases": 14,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Calebot",
+      "winnerScore": 106,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "CLAQUER",
+          "reward": 54
+        },
+        {
+          "word": "FOVEOLAE",
+          "reward": 42
+        },
+        {
+          "word": "BLED",
+          "reward": 10
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14607",
+      "score": 52,
+      "rank": 6,
+      "decisions": 54,
+      "late": 10,
+      "errors": 9,
+      "extras": 5,
+      "wordGoalBids": 0,
+      "ownPurchases": 12,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Calebot",
+      "winnerScore": 119,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "ZYMOGEN",
+          "reward": 66
+        },
+        {
+          "word": "EXPIATE",
+          "reward": 48
+        },
+        {
+          "word": "MOL",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14633",
+      "score": 111,
+      "rank": 1,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 7,
+      "wordGoalBids": 0,
+      "ownPurchases": 20,
+      "winnerPurchases": 20,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "TaylorMason",
+      "winnerScore": 111,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUIRKED",
+          "reward": 63
+        },
+        {
+          "word": "AEOLIAN",
+          "reward": 21
+        },
+        {
+          "word": "UNIONIST",
+          "reward": 24
+        },
+        {
+          "word": "LEU",
+          "reward": 3
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14644",
+      "score": 50,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 5,
+      "wordGoalBids": 0,
+      "ownPurchases": 12,
+      "winnerPurchases": 17,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Menice",
+      "winnerScore": 101,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "STOMACH",
+          "reward": 42
+        },
+        {
+          "word": "LAZULI",
+          "reward": 37
+        },
+        {
+          "word": "BANNED",
+          "reward": 22
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14654",
+      "score": 46,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 6,
+      "wordGoalBids": 1,
+      "ownPurchases": 13,
+      "winnerPurchases": 14,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "atlas",
+      "winnerScore": 99,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "DIPTYCH",
+          "reward": 54
+        },
+        {
+          "word": "JOWLS",
+          "reward": 30
+        },
+        {
+          "word": "FORB",
+          "reward": 13
+        },
+        {
+          "word": "ER",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14679",
+      "score": 86,
+      "rank": 2,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 4,
+      "wordGoalBids": 0,
+      "ownPurchases": 16,
+      "winnerPurchases": 11,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "keanu_reeves",
+      "winnerScore": 89,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUOITED",
+          "reward": 51
+        },
+        {
+          "word": "FORAGES",
+          "reward": 33
+        },
+        {
+          "word": "YE",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14690",
+      "score": 48,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 9,
+      "wordGoalBids": 1,
+      "ownPurchases": 10,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Metheny",
+      "winnerScore": 98,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JIVIEST",
+          "reward": 51
+        },
+        {
+          "word": "CALECHE",
+          "reward": 42
+        },
+        {
+          "word": "MOA",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14701",
+      "score": 62,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 7,
+      "wordGoalBids": 0,
+      "ownPurchases": 14,
+      "winnerPurchases": 16,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "bro",
+      "winnerScore": 105,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "BIFFING",
+          "reward": 48
+        },
+        {
+          "word": "DESEXES",
+          "reward": 45
+        },
+        {
+          "word": "LUNGE",
+          "reward": 12
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14712",
+      "score": 55,
+      "rank": 4,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 8,
+      "wordGoalBids": 1,
+      "ownPurchases": 13,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 2,
+      "winner": "Nijello",
+      "winnerScore": 97,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JERKED",
+          "reward": 45
+        },
+        {
+          "word": "MIRZA",
+          "reward": 32
+        },
+        {
+          "word": "POISON",
+          "reward": 20
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14723",
+      "score": 81,
+      "rank": 2,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 16,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Ambees",
+      "winnerScore": 88,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "FLUIDIZES",
+          "reward": 66
+        },
+        {
+          "word": "BISTRO",
+          "reward": 20
+        },
+        {
+          "word": "AL",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14733",
+      "score": 63,
+      "rank": 4,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 4,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Ambees",
+      "winnerScore": 106,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JOUKING",
+          "reward": 57
+        },
+        {
+          "word": "INVOLVER",
+          "reward": 42
+        },
+        {
+          "word": "DATA",
+          "reward": 7
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14743",
+      "score": 57,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 11,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Dwight",
+      "winnerScore": 94,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JUBILEE",
+          "reward": 48
+        },
+        {
+          "word": "AUSPEX",
+          "reward": 37
+        },
+        {
+          "word": "DOGE",
+          "reward": 9
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14753",
+      "score": 79,
+      "rank": 4,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 8,
+      "wordGoalBids": 1,
+      "ownPurchases": 14,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 2,
+      "winner": "Ambees",
+      "winnerScore": 117,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "EXARCHY",
+          "reward": 66
+        },
+        {
+          "word": "DAZING",
+          "reward": 42
+        },
+        {
+          "word": "BLUE",
+          "reward": 9
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14764",
+      "score": 38,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 8,
+      "wordGoalBids": 0,
+      "ownPurchases": 12,
+      "winnerPurchases": 13,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "BlackSwan",
+      "winnerScore": 99,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "PHARYNX",
+          "reward": 66
+        },
+        {
+          "word": "GEEGAW",
+          "reward": 27
+        },
+        {
+          "word": "VET",
+          "reward": 6
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14775",
+      "score": 56,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 9,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "BlackSwan",
+      "winnerScore": 102,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "WINGLIKE",
+          "reward": 48
+        },
+        {
+          "word": "SUBTEXT",
+          "reward": 48
+        },
+        {
+          "word": "OR",
+          "reward": 2
+        },
+        {
+          "word": "PI",
+          "reward": 4
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14786",
+      "score": 45,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 4,
+      "wordGoalBids": 0,
+      "ownPurchases": 12,
+      "winnerPurchases": 9,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Tessera",
+      "winnerScore": 87,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUOINED",
+          "reward": 51
+        },
+        {
+          "word": "TINTYPE",
+          "reward": 36
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14797",
+      "score": 59,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 11,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 14,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "BlackSwan",
+      "winnerScore": 106,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "BETWIXT",
+          "reward": 57
+        },
+        {
+          "word": "MISMOVE",
+          "reward": 42
+        },
+        {
+          "word": "APE",
+          "reward": 5
+        },
+        {
+          "word": "AE",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14807",
+      "score": 45,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 12,
+      "winnerPurchases": 16,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "BlackSwan",
+      "winnerScore": 99,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "STYLIZED",
+          "reward": 63
+        },
+        {
+          "word": "TWIRPS",
+          "reward": 27
+        },
+        {
+          "word": "NU",
+          "reward": 2
+        },
+        {
+          "word": "DEV",
+          "reward": 7
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14818",
+      "score": 90,
+      "rank": 2,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 10,
+      "wordGoalBids": 1,
+      "ownPurchases": 16,
+      "winnerPurchases": 10,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "sardine",
+      "winnerScore": 93,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "UNFROCK",
+          "reward": 48
+        },
+        {
+          "word": "OXIDASE",
+          "reward": 45
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14829",
+      "score": 70,
+      "rank": 3,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 11,
+      "wordGoalBids": 2,
+      "ownPurchases": 15,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "LetterSharkUltra",
+      "winnerScore": 83,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "HIGHBORN",
+          "reward": 51
+        },
+        {
+          "word": "OUTLEAP",
+          "reward": 27
+        },
+        {
+          "word": "IF",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14840",
+      "score": 63,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 6,
+      "wordGoalBids": 2,
+      "ownPurchases": 13,
+      "winnerPurchases": 13,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 2,
+      "winner": "Ally",
+      "winnerScore": 86,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "SWAGMAN",
+          "reward": 39
+        },
+        {
+          "word": "DOOZIE",
+          "reward": 40
+        },
+        {
+          "word": "UT",
+          "reward": 2
+        },
+        {
+          "word": "YE",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14850",
+      "score": 39,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 17,
+      "wordGoalBids": 2,
+      "ownPurchases": 12,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Karthik",
+      "winnerScore": 95,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JOUNCED",
+          "reward": 51
+        },
+        {
+          "word": "HOMAGER",
+          "reward": 39
+        },
+        {
+          "word": "MAT",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14861",
+      "score": 63,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 8,
+      "wordGoalBids": 0,
+      "ownPurchases": 14,
+      "winnerPurchases": 11,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "keanu_reeves",
+      "winnerScore": 111,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUATORZE",
+          "reward": 78
+        },
+        {
+          "word": "HAULAGE",
+          "reward": 33
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14872",
+      "score": 69,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 5,
+      "wordGoalBids": 0,
+      "ownPurchases": 15,
+      "winnerPurchases": 14,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "havrais",
+      "winnerScore": 87,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "FEIJOAS",
+          "reward": 51
+        },
+        {
+          "word": "MOORAGE",
+          "reward": 30
+        },
+        {
+          "word": "INIA",
+          "reward": 6
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14882",
+      "score": 54,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 2,
+      "extras": 9,
+      "wordGoalBids": 0,
+      "ownPurchases": 11,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "havrais",
+      "winnerScore": 103,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUIXOTES",
+          "reward": 72
+        },
+        {
+          "word": "ROOTAGE",
+          "reward": 24
+        },
+        {
+          "word": "APE",
+          "reward": 5
+        },
+        {
+          "word": "AI",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14893",
+      "score": 61,
+      "rank": 5,
+      "decisions": 62,
+      "late": 2,
+      "errors": 2,
+      "extras": 3,
+      "wordGoalBids": 2,
+      "ownPurchases": 13,
+      "winnerPurchases": 11,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "MeniceLab2",
+      "winnerScore": 82,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "SHUCKED",
+          "reward": 51
+        },
+        {
+          "word": "YAMENS",
+          "reward": 27
+        },
+        {
+          "word": "MU",
+          "reward": 4
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14904",
+      "score": 84,
+      "rank": 2,
+      "decisions": 66,
+      "late": 1,
+      "errors": 2,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 16,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Metheny",
+      "winnerScore": 86,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "CHEVYING",
+          "reward": 60
+        },
+        {
+          "word": "GRANITE",
+          "reward": 24
+        },
+        {
+          "word": "AE",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14915",
+      "score": 48,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 10,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 11,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 2,
+      "winner": "prestoshi",
+      "winnerScore": 98,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JUDGING",
+          "reward": 51
+        },
+        {
+          "word": "MATZO",
+          "reward": 32
+        },
+        {
+          "word": "PAIK",
+          "reward": 15
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14926",
+      "score": 62,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 9,
+      "wordGoalBids": 0,
+      "ownPurchases": 11,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Torch",
+      "winnerScore": 108,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "BUZUKIA",
+          "reward": 66
+        },
+        {
+          "word": "GIPSIES",
+          "reward": 30
+        },
+        {
+          "word": "ALOW",
+          "reward": 10
+        },
+        {
+          "word": "AE",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14937",
+      "score": 78,
+      "rank": 2,
+      "decisions": 63,
+      "late": 2,
+      "errors": 6,
+      "extras": 7,
+      "wordGoalBids": 1,
+      "ownPurchases": 15,
+      "winnerPurchases": 13,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "prestoshi",
+      "winnerScore": 79,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "UNFAKED",
+          "reward": 45
+        },
+        {
+          "word": "LOCATOR",
+          "reward": 27
+        },
+        {
+          "word": "WE",
+          "reward": 5
+        },
+        {
+          "word": "AI",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14948",
+      "score": 64,
+      "rank": 4,
+      "decisions": 68,
+      "late": 1,
+      "errors": 12,
+      "extras": 10,
+      "wordGoalBids": 1,
+      "ownPurchases": 13,
+      "winnerPurchases": 16,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "newBose",
+      "winnerScore": 95,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "JETBEADS",
+          "reward": 54
+        },
+        {
+          "word": "SOYBEAN",
+          "reward": 36
+        },
+        {
+          "word": "REC",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14958",
+      "score": 62,
+      "rank": 6,
+      "decisions": 61,
+      "late": 3,
+      "errors": 9,
+      "extras": 3,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Srinivas",
+      "winnerScore": 95,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "FAQUIRS",
+          "reward": 57
+        },
+        {
+          "word": "BEDRAPE",
+          "reward": 36
+        },
+        {
+          "word": "NO",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14968",
+      "score": 46,
+      "rank": 6,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 6,
+      "wordGoalBids": 0,
+      "ownPurchases": 13,
+      "winnerPurchases": 13,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Nijello",
+      "winnerScore": 102,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "DEUTZIA",
+          "reward": 51
+        },
+        {
+          "word": "MISWORD",
+          "reward": 39
+        },
+        {
+          "word": "CARP",
+          "reward": 12
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14979",
+      "score": 45,
+      "rank": 5,
+      "decisions": 68,
+      "late": 0,
+      "errors": 0,
+      "extras": 8,
+      "wordGoalBids": 0,
+      "ownPurchases": 12,
+      "winnerPurchases": 19,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "slow-n-dumb",
+      "winnerScore": 111,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "FLEXURAL",
+          "reward": 54
+        },
+        {
+          "word": "CYANINE",
+          "reward": 36
+        },
+        {
+          "word": "BORED",
+          "reward": 16
+        },
+        {
+          "word": "UH",
+          "reward": 5
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "14989",
+      "score": 48,
+      "rank": 5,
+      "decisions": 60,
+      "late": 5,
+      "errors": 3,
+      "extras": 2,
+      "wordGoalBids": 0,
+      "ownPurchases": 9,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "maverick-bot",
+      "winnerScore": 92,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUAKY",
+          "reward": 42
+        },
+        {
+          "word": "WINDOWS",
+          "reward": 42
+        },
+        {
+          "word": "EMF",
+          "reward": 8
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15005",
+      "score": 90,
+      "rank": 2,
+      "decisions": 43,
+      "late": 8,
+      "errors": 6,
+      "extras": 8,
+      "wordGoalBids": 1,
+      "ownPurchases": 15,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 3,
+      "winner": "BlackSwan",
+      "winnerScore": 96,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "ANTIQUE",
+          "reward": 48
+        },
+        {
+          "word": "LAZARET",
+          "reward": 48
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15016",
+      "score": 75,
+      "rank": 4,
+      "decisions": 63,
+      "late": 4,
+      "errors": 4,
+      "extras": 10,
+      "wordGoalBids": 1,
+      "ownPurchases": 13,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "triplo",
+      "winnerScore": 124,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUEAZIER",
+          "reward": 78
+        },
+        {
+          "word": "HODDENS",
+          "reward": 36
+        },
+        {
+          "word": "ARVO",
+          "reward": 10
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15027",
+      "score": 51,
+      "rank": 5,
+      "decisions": 49,
+      "late": 13,
+      "errors": 13,
+      "extras": 4,
+      "wordGoalBids": 0,
+      "ownPurchases": 10,
+      "winnerPurchases": 12,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "BuySpellRepeat-bot",
+      "winnerScore": 97,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "QUIPPER",
+          "reward": 60
+        },
+        {
+          "word": "CHARK",
+          "reward": 28
+        },
+        {
+          "word": "OBOE",
+          "reward": 9
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15051",
+      "score": 27,
+      "rank": 6,
+      "decisions": 33,
+      "late": 20,
+      "errors": 18,
+      "extras": 4,
+      "wordGoalBids": 0,
+      "ownPurchases": 3,
+      "winnerPurchases": 17,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Lionel",
+      "winnerScore": 103,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "PARAWING",
+          "reward": 42
+        },
+        {
+          "word": "KOUPREY",
+          "reward": 48
+        },
+        {
+          "word": "GLIM",
+          "reward": 10
+        },
+        {
+          "word": "ALT",
+          "reward": 3
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15073",
+      "score": 33,
+      "rank": 6,
+      "decisions": 52,
+      "late": 22,
+      "errors": 22,
+      "extras": 9,
+      "wordGoalBids": 0,
+      "ownPurchases": 7,
+      "winnerPurchases": 16,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "TileShark",
+      "winnerScore": 128,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "ZOMBIFY",
+          "reward": 78
+        },
+        {
+          "word": "BEADINGS",
+          "reward": 36
+        },
+        {
+          "word": "OCULI",
+          "reward": 14
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15084",
+      "score": 36,
+      "rank": 5,
+      "decisions": 55,
+      "late": 32,
+      "errors": 30,
+      "extras": 9,
+      "wordGoalBids": 1,
+      "ownPurchases": 7,
+      "winnerPurchases": 17,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 1,
+      "winner": "Dwight",
+      "winnerScore": 116,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "AVIANIZE",
+          "reward": 60
+        },
+        {
+          "word": "BLOWN",
+          "reward": 20
+        },
+        {
+          "word": "COURTSIDE",
+          "reward": 36
+        }
+      ],
+      "defensiveBids": 0
+    },
+    {
+      "id": "15113",
+      "score": 45,
+      "rank": 6,
+      "decisions": 22,
+      "late": 13,
+      "errors": 12,
+      "extras": 6,
+      "wordGoalBids": 2,
+      "ownPurchases": 4,
+      "winnerPurchases": 15,
+      "ownPremiumPurchases": 0,
+      "winnerPremiumPurchases": 0,
+      "winner": "Lambi Lambiii",
+      "winnerScore": 99,
+      "winnerWordAudit": true,
+      "winnerWords": [
+        {
+          "word": "BEWORRY",
+          "reward": 45
+        },
+        {
+          "word": "HOKIEST",
+          "reward": 42
+        },
+        {
+          "word": "AGMA",
+          "reward": 10
+        },
+        {
+          "word": "NU",
+          "reward": 2
+        }
+      ],
+      "defensiveBids": 0
+    }
+  ]
+}

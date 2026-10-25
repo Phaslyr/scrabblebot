@@ -4,10 +4,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "npm install --prefix ../spacetimedb && spacetime generate --lang typescript --out-dir src/module_bindings --module-path ../spacetimedb",
-    "start": "tsx src/index.ts",
-    "test": "node --import tsx --test src/strategy.test.ts",
-    "build": "tsc"
+    "generate": "node scripts/generate-bindings.mjs",
+    "start": "tsx src/online.ts",
+    "start:wags": "tsx src/wags-main.ts",
+    "start:victor": "tsx src/victor-main.ts",
+    "victor:check": "tsx src/victor-check.ts",
+    "wags:check": "tsx src/wags-check.ts",
+    "train": "tsx src/online.ts --train",
+    "test": "node --import tsx --test --test-concurrency=1 src/strategy.test.ts src/dictionary.test.ts src/defense.test.ts src/study.test.ts src/online-evaluation.test.ts src/online-progress.test.ts src/public-opponents.test.ts src/wags.test.ts src/local-arena.test.ts src/planning.test.ts src/competition.test.ts src/victor.test.ts src/scoring-v3.test.ts src/taylor-policy.test.ts src/taylor.test.ts",
+    "build": "tsc",
+    "check": "npm run test && npm run build",
+    "smoke": "tsx src/smoke.ts",
+    "opponents:download": "node scripts/download-opponents.mjs",
+    "opponents:fit": "tsx scripts/fit-public-opponents.mjs",
+    "test:local": "tsx scripts/run-local-tests.mjs",
+    "test:reframed": "tsx scripts/test-reframed.mjs",
+    "test:upgrade": "tsx scripts/test-upgrade.mjs"
   },
   "dependencies": {
     "spacetimedb": "^2.12.0",

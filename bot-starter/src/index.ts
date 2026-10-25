@@ -27,7 +27,8 @@ import {
 import { Identity } from "spacetimedb";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { chooseWord, decideBid } from "./strategy.js";
+import { chooseWord, decideBid, prepareDictionary } from "./strategy.js";
+import { loadDictionary } from "./dictionary.js";
 
 const HOST = process.env.STDB_HOST ?? "https://maincloud.spacetimedb.com";
 const DB_NAME = process.env.STDB_DB ?? "scrabblebot";
@@ -49,21 +50,9 @@ function saveToken(tok: string) {
 }
 
 // Load the shared wordlist so the bot can pick playable words locally.
-const dictionaryPath = path.join(
-  path.dirname(new URL(import.meta.url).pathname),
-  "..",
-  "..",
-  "spacetimedb",
-  "wordlist.txt",
-);
-const DICTIONARY: string[] = fs.existsSync(dictionaryPath)
-  ? fs
-      .readFileSync(dictionaryPath, "utf8")
-      .split("\n")
-      .map((l) => l.trim().toUpperCase())
-      .filter((l) => l.length >= 2)
-  : [];
-DICTIONARY.sort((a, b) => b.length - a.length); // longest first for greedy pick
+const DICTIONARY = loadDictionary();
+// Index before connecting so startup work cannot delay an auction.
+prepareDictionary(DICTIONARY);
 
 let myIdentity: Identity | null = null;
 let myBotId: bigint | null = null;
@@ -128,6 +117,7 @@ function tryBid(
     letter,
     myBalance: participant.balance,
     myRack: rackForMatch(conn, matchId),
+    dictionary: DICTIONARY,
   });
   if (amount <= 0) return;
   conn.reducers
@@ -288,6 +278,12 @@ function bootstrapActivity(conn: DbConnection) {
 }
 
 function main() {
+  if (!BOT_TOKEN && !BOT_NONCE && !loadToken()) {
+    console.error("No bot token saved yet. Run Start-Bot.cmd and enter your team token.");
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`[${BOT_NAME}] loaded ${DICTIONARY.length.toLocaleString()} dictionary words`);
   console.log(`[${BOT_NAME}] connecting to ${DB_NAME} at ${HOST}`);
   DbConnection.builder()
     .withUri(HOST)

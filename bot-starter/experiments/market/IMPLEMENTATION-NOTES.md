@@ -1,0 +1,9 @@
+# Frozen response implementation
+
+The wrappers keep the original bot decision as a floor and never lower it. Extra bids require at least 12 points of own immediate or projected tile value, are at most four coins higher, and must satisfy the response cash/value ceiling. As in the earlier exploratory response, forecasting uses the median estimate rather than the upper uncertainty bound.
+
+During normal play the response budget fractions are Wags 0.70, TaylorMason 0.65, VictorMateo build/rebuild 0.85, and VictorMateo defend 0.55. Reserves are respectively 6, 8, 4, and 30 coins, bounded by 15% of cash (35% in VictorMateo defense). The current policies already relax budgets near the end: this wrapper uses their 0.95 offensive / 0.80 defensive endgame fractions and zero reserve when eight or fewer tiles remain or progress reaches 0.88. This phase-aware endgame ceiling differs from the previous Wags/TaylorMason follow-up wrapper's fixed normal fraction; it is shared across all forecast and aggression responses in this experiment.
+
+VictorMateo's productive-value trigger uses its existing immediate ownGain, without borrowing the newer v3 projected-word frontier. Its word-hold check uses its existing planner. Current Wags/TaylorMason retain their v3 planner and projected-value trigger. The unchanged control calls the original bid and word policies, including VictorMateo's stateful mode transitions and per-game reset.
+
+The new learner and simple table were frozen before loading the fresh holdout. Fresh bot metadata is used only to map observed public names to IDs. Replay uses the same fresh public archive as the prediction holdout; it is an approximate counterfactual arena and does not constitute a second independent public validation dataset. Simulator bag seeds are new and are not selected for outcomes.

@@ -1,9 +1,7 @@
-// Checks for the default strategy. Run with `npm test`.
-
 import assert from "node:assert/strict";
-import * as fs from "node:fs";
 import { test } from "node:test";
-import { chooseWord } from "./strategy.js";
+import { loadDictionary } from "./dictionary.js";
+import { chooseWord, decideBid, prepareDictionary, wordReward } from "./strategy.js";
 
 const rack = (letters: string) => {
   const r = new Map<string, number>();
@@ -11,28 +9,63 @@ const rack = (letters: string) => {
   return r;
 };
 
-test("chooseWord picks the longest word the rack can spell", () => {
+test("plays available words and returns null when none are possible", () => {
   const dictionary = ["TACT", "CAT", "AT"];
   assert.equal(chooseWord({ myRack: rack("TACT"), dictionary }), "TACT");
   assert.equal(chooseWord({ myRack: rack("CATX"), dictionary }), "CAT");
   assert.equal(chooseWord({ myRack: rack("CX"), dictionary }), null);
 });
 
-// The bot can't see a match move on while it searches, so a slow search
-// means bids on closed auctions and words from letters it already spent.
-test("chooseWord searches the whole wordlist well within an auction", () => {
-  const dictionary = fs
-    .readFileSync(
-      new URL("../../spacetimedb/wordlist.txt", import.meta.url),
-      "utf8",
-    )
-    .split("\n")
-    .map((l) => l.trim().toUpperCase())
-    .filter((l) => l.length >= 2)
-    .sort((a, b) => b.length - a.length);
-  // The largest rack an admin can set, with almost nothing to spell.
-  const myRack = rack("BCDFGHJKLMNPQRSTVWXZ");
+test("chooses actual reward over length without assuming dictionary order", () => {
+  assert.equal(chooseWord({ myRack: rack("CATX"), dictionary: ["CAT", "AX"] }), "AX");
+});
+
+test("requires repeated letters and notices a rack changed in place", () => {
+  const dictionary = ["TEE"];
+  const myRack = rack("TE");
+  assert.equal(chooseWord({ myRack, dictionary }), null);
+  myRack.set("E", 2);
+  assert.equal(chooseWord({ myRack, dictionary }), "TEE");
+});
+
+test("rewards match the server multipliers and round down", () => {
+  assert.equal(wordReward("AX"), 9);
+  assert.equal(wordReward("QUIZ"), 33);
+  assert.equal(wordReward("JAZZ"), 43);
+  assert.equal(wordReward("CART"), 9);
+  assert.equal(wordReward("RATES"), 10);
+  assert.equal(wordReward("RETAIN"), 15);
+  assert.equal(wordReward("RETAINS"), 21);
+});
+
+test("bids more for a completion than an unrelated expensive letter", () => {
+  const ctx = { myRack: rack("QUI"), dictionary: ["QUIZ"], myBalance: 100 };
+  assert.ok(decideBid({ ...ctx, letter: "Z" }) > decideBid({ ...ctx, letter: "Q" }));
+});
+
+test("bids stay integral, affordable, and preserve cash", () => {
+  for (const myBalance of [0, 1, 2, 10, 100, 100.5, -1, NaN]) {
+    const bid = decideBid({ myRack: rack("QUI"), dictionary: ["QUIZ"], myBalance, letter: "Z" });
+    assert.ok(Number.isInteger(bid) && bid >= 0);
+    if (Number.isFinite(myBalance) && myBalance >= 0) assert.ok(bid <= myBalance);
+    if (myBalance >= 10) assert.ok(bid <= Math.floor(myBalance * 0.35));
+  }
+});
+
+test("a repeated letter completes a word but two missing tiles do not", () => {
+  const ctx = { myRack: rack("LETER"), dictionary: ["LETTER"], myBalance: 100 };
+  assert.ok(decideBid({ ...ctx, letter: "T" }) > decideBid({ ...ctx, letter: "E" }));
+  assert.equal(chooseWord({ myRack: rack("LEER"), dictionary: ["LETTER"] }), null);
+});
+
+test("full dictionary decisions fit comfortably inside a one-second auction", (t) => {
+  const dictionary = loadDictionary();
+  prepareDictionary(dictionary);
+  const ctx = { myRack: rack("BCDFGHJKLMNPQRSTVWXZ"), dictionary };
   const start = performance.now();
-  chooseWord({ myRack, dictionary });
-  assert.ok(performance.now() - start < 100, "a search took 100 ms or more");
+  chooseWord(ctx);
+  decideBid({ ...ctx, letter: "A", myBalance: 100 });
+  const elapsed = performance.now() - start;
+  t.diagnostic(`Full dictionary word + bid search: ${elapsed.toFixed(1)} ms`);
+  assert.ok(elapsed < 100, `a decision took ${elapsed.toFixed(1)} ms`);
 });

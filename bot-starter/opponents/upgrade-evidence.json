@@ -1,0 +1,182 @@
+{
+  "directory": "C:\\Users\\edan1\\Desktop\\calhacks13\\scrabblebot\\bot-starter\\opponents\\data\\upgrade-2026-10-24T18-47-19-582Z",
+  "collectedAt": "2026-10-24T18:50:40.651Z",
+  "summaries": [
+    {
+      "name": "Nijello",
+      "wins": 199,
+      "matchesPlayed": 483,
+      "rating": 1569,
+      "winRate": 0.41200828157349895,
+      "recentGames": 100,
+      "recentScore": 97.88,
+      "longScoreFraction": 0.6730690641601962,
+      "modalLength": 7
+    },
+    {
+      "name": "Chinese Dante",
+      "wins": 234,
+      "matchesPlayed": 643,
+      "rating": 1598,
+      "winRate": 0.36391912908242613,
+      "recentGames": 100,
+      "recentScore": 93.38,
+      "longScoreFraction": 0.8465410152066823,
+      "modalLength": 7
+    },
+    {
+      "name": "LetterShark",
+      "wins": 66,
+      "matchesPlayed": 188,
+      "rating": 1234,
+      "winRate": 0.35106382978723405,
+      "recentGames": 0,
+      "recentScore": 0,
+      "longScoreFraction": null,
+      "modalLength": 0
+    },
+    {
+      "name": "Metheny",
+      "wins": 67,
+      "matchesPlayed": 199,
+      "rating": 1610,
+      "winRate": 0.33668341708542715,
+      "recentGames": 100,
+      "recentScore": 92.57,
+      "longScoreFraction": 0.7991789996759209,
+      "modalLength": 7
+    },
+    {
+      "name": "Doppio",
+      "wins": 156,
+      "matchesPlayed": 527,
+      "rating": 1515,
+      "winRate": 0.29601518026565465,
+      "recentGames": 100,
+      "recentScore": 90.21,
+      "longScoreFraction": 0.7838377120053209,
+      "modalLength": 7
+    },
+    {
+      "name": "Lambi Lambiii",
+      "wins": 57,
+      "matchesPlayed": 197,
+      "rating": 1496,
+      "winRate": 0.2893401015228426,
+      "recentGames": 100,
+      "recentScore": 93.09,
+      "longScoreFraction": 0.720915243312923,
+      "modalLength": 7
+    },
+    {
+      "name": "YeziShanYang",
+      "wins": 80,
+      "matchesPlayed": 286,
+      "rating": 1468,
+      "winRate": 0.27972027972027974,
+      "recentGames": 94,
+      "recentScore": 77.85106382978724,
+      "longScoreFraction": 0.7313473626673954,
+      "modalLength": 7
+    },
+    {
+      "name": "Karthik",
+      "wins": 39,
+      "matchesPlayed": 153,
+      "rating": 950,
+      "winRate": 0.2549019607843137,
+      "recentGames": 22,
+      "recentScore": 42.81818181818182,
+      "longScoreFraction": 0.7515923566878981,
+      "modalLength": 7
+    },
+    {
+      "name": "benx",
+      "wins": 62,
+      "matchesPlayed": 260,
+      "rating": 1191,
+      "winRate": 0.23846153846153847,
+      "recentGames": 3,
+      "recentScore": 0,
+      "longScoreFraction": null,
+      "modalLength": 0
+    },
+    {
+      "name": "guesser",
+      "wins": 110,
+      "matchesPlayed": 467,
+      "rating": 1526,
+      "winRate": 0.23554603854389722,
+      "recentGames": 100,
+      "recentScore": 84.4,
+      "longScoreFraction": 0.8154028436018957,
+      "modalLength": 7
+    },
+    {
+      "name": "keanu_reeves",
+      "wins": 106,
+      "matchesPlayed": 456,
+      "rating": 1471,
+      "winRate": 0.2324561403508772,
+      "recentGames": 100,
+      "recentScore": 81.2,
+      "longScoreFraction": 0.8346059113300492,
+      "modalLength": 7
+    },
+    {
+      "name": "LetterSharkPro",
+      "wins": 22,
+      "matchesPlayed": 96,
+      "rating": 1525,
+      "winRate": 0.22916666666666666,
+      "recentGames": 96,
+      "recentScore": 87.07291666666667,
+      "longScoreFraction": 0.8161263309008254,
+      "modalLength": 7
+    },
+    {
+      "name": "Cashu",
+      "wins": 92,
+      "matchesPlayed": 407,
+      "rating": 1606,
+      "winRate": 0.22604422604422605,
+      "recentGames": 100,
+      "recentScore": 85.63,
+      "longScoreFraction": 0.7462337965666238,
+      "modalLength": 7
+    },
+    {
+      "name": "marcellinus",
+      "wins": 117,
+      "matchesPlayed": 576,
+      "rating": 1601,
+      "winRate": 0.203125,
+      "recentGames": 100,
+      "recentScore": 79.9,
+      "longScoreFraction": 0.7881101376720901,
+      "modalLength": 7
+    },
+    {
+      "name": "coconut",
+      "wins": 46,
+      "matchesPlayed": 235,
+      "rating": 1604,
+      "winRate": 0.19574468085106383,
+      "recentGames": 61,
+      "recentScore": 77.78688524590164,
+      "longScoreFraction": 0.761854583772392,
+      "modalLength": 7
+    },
+    {
+      "name": "bro",
+      "wins": 43,
+      "matchesPlayed": 419,
+      "rating": 1575,
+      "winRate": 0.1026252983293556,
+      "recentGames": 100,
+      "recentScore": 84.06,
+      "longScoreFraction": 0.7623126338329764,
+      "modalLength": 7
+    }
+  ]
+}

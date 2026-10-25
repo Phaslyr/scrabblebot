@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "name": "mexicanpepper",
+  "botId": 17,
+  "version": 1,
+  "collectedAt": "2026-10-24T11:37:02.198Z",
+  "tier": "small-sample",
+  "leaderboard": {
+    "matches": 10,
+    "wins": 6,
+    "winRate": 0.6,
+    "interval95": [
+      0.3126695474501864,
+      0.8318224187964902
+    ]
+  },
+  "bid": {
+    "family": "censored-linear",
+    "features": [
+      "intercept",
+      "letter_A_inverse_balance",
+      "letter_B_inverse_balance",
+      "letter_C_inverse_balance",
+      "letter_D_inverse_balance",
+      "letter_E_inverse_balance",
+      "letter_F_inverse_balance",
+      "letter_G_inverse_balance",
+      "letter_H_inverse_balance",
+      "letter_I_inverse_balance",
+      "letter_J_inverse_balance",
+      "letter_K_inverse_balance",
+      "letter_L_inverse_balance",
+      "letter_M_inverse_balance",
+      "letter_N_inverse_balance",
+      "letter_O_inverse_balance",
+      "letter_P_inverse_balance",
+      "letter_Q_inverse_balance",
+      "letter_R_inverse_balance",
+      "letter_S_inverse_balance",
+      "letter_T_inverse_balance",
+      "letter_U_inverse_balance",
+      "letter_V_inverse_balance",
+      "letter_W_inverse_balance",
+      "letter_X_inverse_balance",
+      "letter_Y_inverse_balance",
+      "letter_Z_inverse_balance",
+      "log_balance",
+      "rack_size",
+      "known_copies",
+      "match_progress",
+      "own_score",
+      "leader_gap",
+      "first_price"
+    ],
+    "coefficients": [
+      0.15024036477833863,
+      0.01083415464795001,
+      0.007178810600093923,
+      0.1494682634797892,
+      0.02593726212912058,
+      0.0924873354199722,
+      0.11458150221402003,
+      0.06460527339023613,
+      0.23507012228190127,
+      0.05867829294300534,
+      0.044187339942076485,
+      0.1711294678378987,
+      0.09379504840272321,
+      -0.014045326504031267,
+      0.02790945821753828,
+      0.02236857437602045,
+      0.16799597421426482,
+      0.3512380966313056,
+      0.029515805375736937,
+      0.13243737213644144,
+      0.002465975911182402,
+      0.05899029384533005,
+      0.0717399113027535,
+      0.09729409430509925,
+      0.2404500688060709,
+      0.09623730439849215,
+      0.3846812324255931,
+      -0.20896848684200567,
+      0.2023553197544286,
+      -0.19371522186092707,
+      0.2243483189105293,
+      0.1881508081062378,
+      -0.21832333329407652,
+      0
+    ],
+    "letterFractions": {
+      "A": 0.14942528735632185,
+      "C": 0.5945945945945946,
+      "D": 0.21666666666666667,
+      "E": 0.25925925925925924,
+      "F": 0.37777777777777777,
+      "I": 0.14814814814814814,
+      "L": 0.28,
+      "N": 0.14102564102564102,
+      "O": 0.15,
+      "P": 0.559322033898305,
+      "R": 0.34375,
+      "S": 0.3037974683544304,
+      "T": 0.14285714285714285,
+      "U": 0.2235294117647059
+    },
+    "fallbackFraction": 0.23636363636363636
+  },
+  "word": {
+    "minimumLength": 7,
+    "observedModalLength": 7,
+    "policyBasis": "Aim for the observed modal word length; the target threshold and shorter-word fallback behavior are approximations.",
+    "trainingLengthHistogram": {
+      "2": 3,
+      "4": 3,
+      "5": 6,
+      "6": 4,
+      "7": 10
+    },
+    "cashOutBalance": 20,
+    "flushRemaining": 3,
+    "rackLimit": 14,
+    "fallbackIsHeuristic": true
+  },
+  "evidence": {
+    "sourceEndpoint": "https://maincloud.spacetimedb.com/v1/database/scrabblebot/sql",
+    "snapshot": "C:\\Users\\edan1\\Desktop\\calhacks13\\scrabblebot\\bot-starter\\opponents\\data\\2026-10-24T11-37-02-198Z",
+    "trainMatchIds": [
+      194,
+      276,
+      331,
+      388,
+      391,
+      394,
+      397,
+      400
+    ],
+    "testMatchIds": [
+      404,
+      407
+    ],
+    "familySelection": {
+      "calibrationMatchIds": [
+        397,
+        400
+      ],
+      "scores": [
+        {
+          "family": "censored-linear",
+          "loss": 0.2246978189380906
+        },
+        {
+          "family": "letter-median",
+          "loss": 0.2772340768410167
+        }
+      ]
+    },
+    "trainingSamples": 509,
+    "trainingExactWinningBids": 104,
+    "trainingWordPlays": 26,
+    "heldOutWordPlays": 4,
+    "heldOutMedianWordLength": 4,
+    "heldOut": {
+      "exactWinningBids": 19,
+      "losingBounds": 112,
+      "winningBidMAE": 4.894736842105263,
+      "upperViolationRate": 0.375,
+      "selectionLoss": 0.10968937743994973
+    },
+    "letterMedianBaseline": {
+      "exactWinningBids": 19,
+      "losingBounds": 112,
+      "winningBidMAE": 9.31578947368421,
+      "upperViolationRate": 0.30357142857142855,
+      "selectionLoss": 0.2163061253846504
+    },
+    "fidelity": "limited: frequent losing-bound conflicts",
+    "limits": [
+      "Only winning bids are observed exactly; losses supply upper bounds.",
+      "Initial letters and unsubmitted bids are hidden. Opening-state features can miss late bid revisions.",
+      "Word-length tendency is fitted; cash-out, endgame flushing, rack limit, and best-reward word selection are heuristic approximations.",
+      "Prediction checks on historical games do not establish reproduced win rate or multiplayer strength."
+    ]
+  }
+}
