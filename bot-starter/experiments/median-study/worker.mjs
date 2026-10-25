@@ -1,0 +1,12 @@
+import {parentPort,workerData} from 'node:worker_threads';
+import {readFileSync} from 'node:fs';
+import {join} from 'node:path';
+import {DEFAULT_BAG} from '../../../spacetimedb/src/letters.ts';
+import {loadDictionary} from '../../src/dictionary.ts';
+import {prepareDictionary} from '../../src/strategy.ts';
+import {preparePools,playTask} from './arena.mjs';
+import {playPriceTask} from './price-arena.mjs';
+const data=JSON.parse(readFileSync(join(workerData.directory,'opponents.json'),'utf8')),pools=preparePools(data),pricePaths=JSON.parse(readFileSync(join(workerData.directory,'price-paths.json'),'utf8')),dictionary=loadDictionary();prepareDictionary(dictionary);
+const bag=DEFAULT_BAG.flatMap(([c,n])=>Array(n).fill(c));
+parentPort.on('message',task=>{try{parentPort.postMessage({id:task.id,records:task.field==='price-taking'?playPriceTask(task,data,dictionary,pricePaths):playTask(task,data,pools,dictionary,bag,workerData.directory)});}catch(error){parentPort.postMessage({id:task.id,error:error.stack??String(error)});}});
+parentPort.postMessage({ready:true});

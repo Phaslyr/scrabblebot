@@ -1,0 +1,14 @@
+export const mean=a=>a.reduce((s,n)=>s+n,0)/Math.max(1,a.length);
+function logGamma(z){const c=[676.5203681218851,-1259.1392167224028,771.32342877765313,-176.61502916214059,12.507343278686905,-.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];if(z<.5)return Math.log(Math.PI)-Math.log(Math.sin(Math.PI*z))-logGamma(1-z);z--;let x=.99999999999980993;for(let i=0;i<c.length;i++)x+=c[i]/(z+i+1);const t=z+c.length-.5;return .5*Math.log(2*Math.PI)+(z+.5)*Math.log(t)-t+Math.log(x);}
+function fraction(a,b,x){const tiny=1e-300;let c=1,d=1-(a+b)*x/(a+1);if(Math.abs(d)<tiny)d=tiny;d=1/d;let h=d;for(let m=1;m<=300;m++){const m2=2*m;let aa=m*(b-m)*x/((a+m2-1)*(a+m2));d=1+aa*d;if(Math.abs(d)<tiny)d=tiny;c=1+aa/c;if(Math.abs(c)<tiny)c=tiny;d=1/d;h*=d*c;aa=-(a+m)*(a+b+m)*x/((a+m2)*(a+m2+1));d=1+aa*d;if(Math.abs(d)<tiny)d=tiny;c=1+aa/c;if(Math.abs(c)<tiny)c=tiny;d=1/d;const delta=d*c;h*=delta;if(Math.abs(delta-1)<3e-14)break;}return h;}
+function beta(x,a,b){if(x<=0)return 0;if(x>=1)return 1;const front=Math.exp(logGamma(a+b)-logGamma(a)-logGamma(b)+a*Math.log(x)+b*Math.log1p(-x));return x<(a+1)/(a+b+2)?front*fraction(a,b,x)/a:1-front*fraction(b,a,1-x)/b;}
+export function tCdf(t,df){if(!Number.isFinite(t))return t<0?0:1;if(t===0)return .5;const half=.5*beta(df/(df+t*t),df/2,.5);return t>0?1-half:half;}
+export function tQuantile(p,df){if(p<.5)return -tQuantile(1-p,df);let lo=0,hi=1;while(tCdf(hi,df)<p)hi*=2;for(let i=0;i<90;i++){const mid=(lo+hi)/2;if(tCdf(mid,df)<p)lo=mid;else hi=mid;}return (lo+hi)/2;}
+export function paired(values,familySize=1){const n=values.length,m=mean(values),variance=values.reduce((s,x)=>s+(x-m)**2,0)/Math.max(1,n-1),se=Math.sqrt(variance/Math.max(1,n)),critical=tQuantile(1-.05/(2*familySize),Math.max(1,n-1)),width=critical*se;
+ return {mean:m,n,sd:Math.sqrt(variance),se,rawP:se?Math.min(1,2*(1-tCdf(Math.abs(m/se),n-1))):m===0?1:0,interval95:[m-tQuantile(.975,Math.max(1,n-1))*se,m+tQuantile(.975,Math.max(1,n-1))*se],simultaneousInterval:[m-width,m+width]};}
+export function holm(rows){let prior=0;for(const [i,r]of [...rows].sort((a,b)=>a.rawP-b.rawP).entries()){prior=Math.max(prior,Math.min(1,r.rawP*(rows.length-i)));r.adjustedP=prior;}return rows;}
+export function group(rows,key){const out=new Map();for(const r of rows){const k=key(r);if(!out.has(k))out.set(k,[]);out.get(k).push(r);}return out;}
+export function compare(rows,pairs,metrics=['score','margin']){const fields=[...new Set(rows.map(g=>g.field))],familySize=fields.length*pairs.length*metrics.length,result=[];
+ for(const field of fields){const g=rows.filter(g=>g.field===field),bags=[...group(g,r=>r.seed).values()].map(xs=>Object.fromEntries(xs.map(x=>[x.config,x])));for(const [a,b]of pairs)for(const metric of metrics){const value=g=>metric==='margin'?g.own.score-g.own.topRival:g.own[metric];result.push({field,a,b,metric,...paired(bags.map(p=>value(p[a])-value(p[b])),familySize)});}}
+ return holm(result);
+}
