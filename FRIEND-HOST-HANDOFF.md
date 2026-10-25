@@ -145,7 +145,41 @@ bot-starter/runs/TaylorMason/<session>/
 
 After the connection check, summarize the evidence and stop. A larger batch, such as `-Matches 16 -Minutes 90`, needs the human's instruction. Continuous play also needs explicit authorization; normal `Start-Bot.cmd` / `npm start` with no evaluation limit can keep joining games indefinitely.
 
-## 6. Diagnose connection quality, not just whether it connects
+## 6. Entering an official tournament, only when requested
+
+The bot already implements the registration flow described at the bottom of the [official docs](https://scrabblebot.spacetimedb.com/docs#tournaments): once its own credential is verified, it calls `registerForTournament` if `TOURNAMENT_ID` is set. Tournament matches use the same bidding and word-play handlers. No strategy rewrite or separate tournament identity is required.
+
+**This handoff does not select a tournament ID or register an entrant.** Read the actual ID and registration status from the [official tournament page](https://scrabblebot.spacetimedb.com/tournament) when the human requests entry. Do not guess an ID. Confirm the page is connected and showing current data; a disconnected page's empty state is not proof that registration is unavailable.
+
+Use the normal runner for a tournament. **Do not use `Start-Online-Test.cmd` or training mode**: the test launcher clears `TOURNAMENT_ID`, and bounded evaluation/training rejects tournament registration.
+
+Windows example from the project root, **replacing `123` with the actual tournament ID**:
+
+```powershell
+Remove-Item Env:BOT_TOKEN,Env:BOT_NONCE,Env:BOT_TRAIN,Env:BOT_TRAIN_PLAN,Env:BOT_TRAIN_RESUME,Env:BOT_EVAL_MATCHES,Env:BOT_EVAL_MINUTES -ErrorAction SilentlyContinue
+.\Start-Bot.cmd -TournamentId 123
+```
+
+macOS/Linux example from the project root, **replacing `123` with the actual tournament ID**:
+
+```sh
+(
+  cd bot-starter
+  unset BOT_TOKEN BOT_NONCE BOT_TRAIN BOT_TRAIN_PLAN BOT_TRAIN_RESUME BOT_EVAL_MATCHES BOT_EVAL_MINUTES
+  export BOT_NAME=TaylorMason
+  export BOT_STRATEGY=taylor
+  export STDB_HOST=https://maincloud.spacetimedb.com
+  export STDB_DB=scrabblebot
+  export TOURNAMENT_ID=123
+  npm start
+)
+```
+
+Use the private credential file from the earlier section. Verify that TaylorMason appears in that tournament's entrant list; a successful account connection or ordinary lobby entry alone does not prove registration. Report registration errors rather than repeatedly guessing IDs.
+
+Keep the process connected throughout the event. The docs state that an offline registered bot can still be seated and miss all its bids. Before the tournament starts, the normal runner can still enter lobby matches, and an ongoing match can delay the admin's start. Once the tournament starts, lobby entry is refused for its entrants; this expected refusal is not a reason to change strategy or start another client. After elimination or the event ends, normal lobby play can resume, so stop the runner if the human requested tournament-only operation.
+
+## 7. Diagnose connection quality, not just whether it connects
 
 Moving computers may help, but another home connection does not guarantee a fix. The previous run had 50 full games, 11 partial games, 321 bid rejections saying `Auction closed` across the campaign, and two connection closures. Its strategy calculations were generally quick, so investigate update delivery and submission timing as well as local CPU load.
 
@@ -160,7 +194,7 @@ For the new host, measure:
 
 No inbound port forwarding, public web server, game-server deployment or tournament registration is required by this outbound client. Do not add them as setup steps. Preserve the client's existing own-game subscriptions and `.withCompression('none')` setting while establishing a comparable baseline.
 
-## 7. Stop and operate predictably
+## 8. Stop and operate predictably
 
 - For an interactive run, **Ctrl+C** asks the bot to disconnect and save completed results.
 - Verify its actual process exited. A disconnected remote desktop/SSH session is not a reliable stop mechanism.
